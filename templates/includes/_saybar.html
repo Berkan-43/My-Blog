@@ -1,0 +1,34 @@
+{% load static %}
+         
+<div class="col-xl-3">
+
+
+
+  <div class="card mb-3">
+      <div class="card-header">
+        Menü
+        <div class="spinner-grow text-success float-end" role="status">
+          <span class="visually-hidden ">Loading...</span>
+        </div>
+      </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="{% url 'profil-duzenle' %}" class="btn">Profil Düzenle</a>
+          </li>
+            <li class="list-group-item">
+              <a href="{% url 'sifre-degistir' %}" class="btn">Şifre Değiştir</a>
+            </li>
+            <li class="list-group-item">
+              <a href="{% url 'yazi-ekle' %}" class="btn">Yazı-Ekle</a>
+            </li>
+            <li class="list-group-item">
+              <a href="{% url 'yazilarim' %}" class="btn">Yazılarım</a>
+            </li>
+          </ul>
+    </div>
+
+    
+    <img src="{% static 'img/images2.jpg' %}" class="mt-4  img" alt="">
+    <img src="{% static 'img/images.jpg' %}" class="mt-4  img" alt="">
+    <img src="{% static 'img/images.png' %}" class="mt-4 mb-3 img" alt="">
+  </div>

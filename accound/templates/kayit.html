@@ -1,0 +1,23 @@
+{% extends 'anasayfa.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+    Kayıt
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/_message.html' %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" class="btn btn-info mb-3 mt-3" value="Kayıt Ol">
+    </form>
+    <div class="float-end">
+        <img class="m-2 mb-lg-3" src="{% static 'img/bbb.webp' %}" alt="">
+        <img class="m-2 mb-lg-3" src="{% static 'img/microsoft.webp' %}" alt="">
+        <img class="m-2 mb-lg-3" src="{% static 'img/partner.png' %}" alt="">
+    </div>
+{% endblock content %}

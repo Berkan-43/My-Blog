@@ -1,0 +1,72 @@
+{% load kategori_list %}
+{% kategori_list as kategoriler %}
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'anasayfa' %}">
+      <img src="{% static 'img/my-logo.png' %}" alt="  " width="60" height="55">
+      Birlikte Kodlayalım
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        {% for kategori in kategoriler %}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'kategori' kategoriSlug=kategori.slug %}">{{ kategori.isim }}</a>
+          </li>
+          {% endfor %}
+          <li class="nav-item mx-5">
+            <a class="nav-link text-white" aria-current="page" href="{% url 'iletisim' %}"><i class="fa-solid fa-envelope mx-2"></i>İletişim</a>
+          </li>
+      </ul>      
+ 
+      <form id="box" action="{% url 'anasayfa' %}" class="d-flex">
+       <input type="search" id="search" name="sorgu" placeholder="Ara..">
+        <i type="submit" value="Ara" class="fa fa-search"></i>
+      </form>
+
+        
+        {% if not request.user.is_authenticated %}
+      <div class="navbar-nav mb-2 ms-5">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="{% url 'giris' %}"><i class="fa-solid fa-user me-1 mx-2"></i>Giriş Yap</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="{% url 'kayit' %}"><i class="fa-solid fa-lock me-1 mx-2"></i>Kayıt Ol</a>
+          </li>
+      </div>
+      {% else %}    
+      <div class="navbar-nav mb-2 ms-5 cikis">
+        <ul class="yap">
+      <li class="nav-item ">
+        <a class="nav-link text-white" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal"href=""><i class="fa-solid fa-right-from-bracket me-1 mx-2"></i>Çıkış Yap</a>
+      </li>
+    </ul>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" ><i class="fa-solid fa-right-from-bracket me-1 mx-2"></i>Çıkış Yap</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Çıkış Yapmak İstediğinizden Eminmisiniz ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Hayır</button>
+            <button type="button" class="btn btn-sm btn-info"><a href="{% url 'cikis' %}" class="text-white">Evet</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+      {% endif %}
+
+    </div>
+  </div>
+</nav>

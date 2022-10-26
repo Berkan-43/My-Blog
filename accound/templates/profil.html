@@ -1,0 +1,26 @@
+{% extends 'anasayfa.html' %}
+{% load static %}
+{% block title %}
+    {{profil.username}}
+{% endblock title %}
+    
+
+{% block content %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="card-text">
+
+            {% if profil.get_full_name == '' %}
+                Adı Soyadı: Girilmemiş.
+            {%else%}
+                Adı Soyadı: {{profil.get_full_name}}
+            {% endif%}
+<br>
+            E-mail: {{profil.email}}
+                
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    

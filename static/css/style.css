@@ -1,0 +1,105 @@
+body {
+    background-color:white;
+}
+ 
+/* Search */
+#box {
+    max-width: 300px;
+    position: relative;
+}
+ 
+#box .fa-search {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    font-size: 20px;
+    color:black;
+}
+ 
+#search {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size:18px;
+    padding: 12px 20px 12px 40px;
+}
+.search {
+    margin-left: 25%;
+}
+
+/* Card */
+.card {
+    background-color: antiquewhite;
+    
+}
+.card img {
+    width: 100%;
+}
+.card {
+    box-shadow: 10px 10px 10px black;
+}
+.img {
+    box-shadow: 10px 10px 10px black;
+}
+/* Footer */
+.container-fluid .footer {
+    display: flex;
+    justify-content: center;   
+}
+.footer a {
+    color: beige;
+    font-size: 30px;
+    margin-left: 5px;
+}
+.iletisim {
+    color: antiquewhite;
+    text-align: center;
+}
+.blogger {
+    color: antiquewhite;
+    text-align: center;
+}
+.blogger img {
+    cursor: pointer;
+    text-align: center;
+}
+ 
+/* scrolbar */
+.scroll {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgb(221, 191, 152);
+    color: rgb(153, 106, 106);
+    display: none;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    transform: rotate(180deg);
+    transition: all 0.5s ease;
+}
+.scroll:hover {
+    transform: rotate(0deg);
+    background-color:  rgb(114, 126, 126);
+    color: black;
+}
+
+@media screen and (max-width: 1200px) {
+    #yaziekle {
+        width: 300px !important;
+    }
+}
+@media screen and (max-width: 1085px) {
+    .img {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 970px) {
+    .img {
+        width: 100%;
+    }
+}

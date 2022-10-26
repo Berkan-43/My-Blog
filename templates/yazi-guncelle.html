@@ -1,0 +1,18 @@
+{% extends 'anasayfa.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    Yazı-Guncelle
+{% endblock title %}
+
+
+{% block content %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.media}}
+        {{form|crispy}}
+        <input type="submit" class="btn btn-info mb-3 mt-3" value="Yazı'yı Güncelle">
+    </form>
+{% endblock content %}
+    
