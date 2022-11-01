@@ -129,6 +129,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -141,15 +142,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 CRISPY_TEMPLATE_PACK = 'Bootstrap4'
 
 LOGIN_REDIRECT_URL = '/'
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL='berkanyildirim1999@gmail.com'
-EMAIL_HOST_USER = 'berkanyildirim1999@gmail.com'
-EMAIL_HOST_PASSWORD =('EMAIL_PASSWORD')
-
 
 LOGGING = {
     'version': 1,
